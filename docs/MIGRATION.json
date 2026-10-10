@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "slug": "sarif-baseline-diff",
+  "domain": "quality",
+  "guidance_group": "light",
+  "source_commit": "1286096c10a23bbb04aca83679ae3c31f3326030",
+  "source_repository": "mytestapp20261001-collab/mytest-engineering-toolbox",
+  "source_repository_id": 1411411288,
+  "source_path": "tools/sarif-baseline-diff",
+  "root_path": ".",
+  "publication_status": "prepared_only; coordinator verifies final repository identity and remote CI",
+  "expected_repository": "mytestapp20261001-collab/sarif-baseline-diff",
+  "repository_id": null,
+  "preserved_files": [
+    {
+      "path": "README.md",
+      "size_bytes": 3836,
+      "sha256": "e55220f873e13714682cc240baacb657e5714f5a3b32e19db7442ff16886c407",
+      "git_blob_sha1": "1bb6aaf53f0e2336e38198388de5010f9a521540",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/README.md"
+    },
+    {
+      "path": "SKILL.md",
+      "size_bytes": 1103,
+      "sha256": "4358adf2d588d8ff65a42a74ee9ff50ead250bdcc089d161e59e2471ba8194e3",
+      "git_blob_sha1": "81554e0b930bec27d73a832688ac692faf6195f6",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/SKILL.md"
+    },
+    {
+      "path": "examples/baseline.json",
+      "size_bytes": 694,
+      "sha256": "8097e2a7fb2a1172c4223b1da251483c9e51d32287a16742d4f9dd0c99c4afce",
+      "git_blob_sha1": "ba320e4f90943ecadc34cf8b9e996069c71a289d",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/examples/baseline.json"
+    },
+    {
+      "path": "examples/fail.json",
+      "size_bytes": 905,
+      "sha256": "ea40c9292afc3a6a9976075c09bed36309ae713a09bc3b03e9b9c1ef73f58169",
+      "git_blob_sha1": "256651c198d1e79c066b5a3e3c90765db4006e1a",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/examples/fail.json"
+    },
+    {
+      "path": "examples/pass.json",
+      "size_bytes": 694,
+      "sha256": "8097e2a7fb2a1172c4223b1da251483c9e51d32287a16742d4f9dd0c99c4afce",
+      "git_blob_sha1": "ba320e4f90943ecadc34cf8b9e996069c71a289d",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/examples/pass.json"
+    },
+    {
+      "path": "test_tool.py",
+      "size_bytes": 4200,
+      "sha256": "bf7a8740848a2591c56834f932203f4b59629852a16de7ebe7491328413689c6",
+      "git_blob_sha1": "c059333ec608f17ad1eae770eae095025462e00d",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/test_tool.py"
+    },
+    {
+      "path": "tool.py",
+      "size_bytes": 7514,
+      "sha256": "8406c7f01c633f2e5c348bcf74dec7b27fab843acf05ae4fd5ef1453e14e5080",
+      "git_blob_sha1": "1a31cf7af02d23deab5ff613cc6c67bd4698c31e",
+      "utf8": true,
+      "source_path": "tools/sarif-baseline-diff/tool.py"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "sha256": "dce76471613629e93f3f98b7aaa6f72ff9adb88204a3f83d3045952017ab2f46",
+      "git_blob_sha1": "677c4463d59b560db9c1fde1052eff6eefa6441a",
+      "utf8": true,
+      "source_path": "LICENSE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 62,
+      "sha256": "e4d5aecc4cd36f593c2e7f3dad08b24261b13466b898004a445614058d29d8de",
+      "git_blob_sha1": "fe9f8fb619601213cbfef4f6eadb5d413d8f7f01",
+      "utf8": true,
+      "source_path": ".gitignore"
+    }
+  ],
+  "readme_checks": [
+    {
+      "label": "README example",
+      "args": [
+        "-I",
+        "tool.py",
+        "examples/baseline.json",
+        "examples/pass.json"
+      ],
+      "expected_exit": 0,
+      "output": "json",
+      "documented_command": "python3.12 -I tool.py examples/baseline.json examples/pass.json"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "-I",
+        "tool.py",
+        "examples/baseline.json",
+        "examples/fail.json"
+      ],
+      "expected_exit": 1,
+      "output": "json",
+      "documented_command": "python3.12 -I tool.py examples/baseline.json examples/fail.json  # expected exit 1"
+    },
+    {
+      "label": "CLI help",
+      "args": [
+        "tool.py",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "output": "help"
+    },
+    {
+      "label": "CLI missing input",
+      "args": [
+        "tool.py"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    },
+    {
+      "label": "CLI unknown argument",
+      "args": [
+        "tool.py",
+        "--unsupported-migration-test"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    }
+  ]
+}

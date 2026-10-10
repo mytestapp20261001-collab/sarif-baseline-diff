@@ -1,0 +1,45 @@
+{
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "synthetic-checker"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "R1",
+          "message": {
+            "text": "synthetic diagnostic"
+          },
+          "level": "error",
+          "fingerprints": {
+            "stable/v1": "id-1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/demo.py"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "R2",
+          "message": {
+            "text": "another synthetic diagnostic"
+          },
+          "partialFingerprints": {
+            "sample/v1": "id-2"
+          }
+        }
+      ]
+    }
+  ]
+}
